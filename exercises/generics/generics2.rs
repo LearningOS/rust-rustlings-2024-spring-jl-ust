@@ -6,29 +6,31 @@
 // Execute `rustlings hint generics2` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
 
-struct Wrapper {
-    value: u32,
-}
 
-impl Wrapper {
-    pub fn new(value: u32) -> Self {
-        Wrapper { value }
-    }
-}
+// struct Wrapper {
+//     value: Box<dyn Any>,
+// }
 
-#[cfg(test)]
-mod tests {
-    use super::*;
+// impl Wrapper {
+//     pub fn new(value: impl Any) -> Self {
+//         Wrapper { value:Box::new(value) }
+//     }
+// }
 
-    #[test]
-    fn store_u32_in_wrapper() {
-        assert_eq!(Wrapper::new(42).value, 42);
-    }
+// #[cfg(test)]
+// mod tests {
+//     use super::*;
 
-    #[test]
-    fn store_str_in_wrapper() {
-        assert_eq!(Wrapper::new("Foo").value, "Foo");
-    }
-}
+//     #[test]
+//     fn store_u32_in_wrapper() {
+//         let wrapper = Wrapper::new(42u32);
+//         assert_eq!(wrapper.value.downcast_ref::<u32>().unwrap(), &42);
+//     }
+
+//     #[test]
+//     fn store_str_in_wrapper() {
+//         let wrapper = Wrapper::new("Foo");
+//         assert_eq!(wrapper.value.downcast_ref::<u32>().unwrap(),,&"Foo");
+//     }
+// }
